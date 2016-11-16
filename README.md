@@ -1,2 +1,2 @@
-# front-end-project-lister
+# jq-project-lister
 It might be just a json file...
