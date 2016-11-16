@@ -1,0 +1,39 @@
+<html>
+	<title>Jay's Front Lab @ BlueJay Mobile Health Inc.</title>
+	<script src="//code.jquery.com/jquery-git.min.js"></script>
+	<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+	
+
+	<body class="container">
+		<h1>
+			<span>Jay's Front Lab </span>
+			<small>@ BlueJay Mobile Health Inc.</small>
+		</h1>
+		<h2>Project List</h2>
+		<ul class="projlist">
+		</ul>
+	</body>
+	<script>
+		$(function(){
+			$.getJSON('/projects/projlist.json', function(data){
+				console.log(data);
+				if (data && data.length) {
+					$.each(data, function(i, o) {
+						$(".projlist").append("<li>" + o.name + getVersionListHTML(o.versions) + "</li>");
+					});
+				}
+			});
+			function getVersionListHTML(versions){
+				var jqObj = $("<ul></ul>");
+				console.log('versions', versions);
+				console.log('before append', jqObj.prop('outerHTML'));
+				$.each(versions, function(i,o){
+					jqObj.append("<li><a href='" + o.path + "'>" + o.name + "</a></li>");
+					//jqObj.append("<li>" + o.name + "</li>");
+				})
+				return jqObj.prop('outerHTML');
+			}
+		})
+	</script>
+</html>
