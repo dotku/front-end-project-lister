@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 [{
     "name": "projectNameA",
     "description": "projectNameA Description",
@@ -19,3 +20,26 @@
         "path": "projectNameB/beta/2.0.1"
     }]
 }]
+=======
+[{
+	"project": "projectNameA",
+	"description": "projectNameA Description",
+	"versions": [{
+		"version": "v0.0.2-dev",
+		"path": "projectNameA/dev/0.0.2"
+	}, {
+		"version": "v0.0.1-beta",
+		"path": "projectNameA/beta/0.0.1"
+	}]
+}, {
+	"project": "projectNameB",
+	"description": "projectNameA Description",
+	"versions": [{
+		"version": "v2.0.2-dev",
+		"path": "projectNameB/dev/2.0.2"
+	}, {
+		"version": "v2.0.1-beta",
+		"path": "projectNameB/beta/2.0.1"
+	}]
+}]
+>>>>>>> df2cae736742948656072da3ec2696dccb9285f5
